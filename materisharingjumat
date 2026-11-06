@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTOMATISASI MEDIA AJAR AX-2026</title>
+    <style>
+        :root {
+            --bg-color: #05050a;
+            --neon-cyan: #00f0ff;
+            --neon-magenta: #ff0055;
+            --neon-yellow: #ffee00;
+            --text-color: #e0e0ed;
+            --card-bg: #0d0e15;
+            --border-glow: 1px solid rgba(0, 240, 255, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-image: 
+                linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 4px, 6px 100%;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER CYBERPUNK */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--neon-magenta);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .glitch-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            color: var(--neon-yellow);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        /* SYSTEM STATUS / MAP SECTION */
+        .system-status {
+            background: var(--card-bg);
+            border: var(--border-glow);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+            padding: 20px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .system-status::before {
+            content: "[ SYSTEM OVERVIEW ]";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--bg-color);
+            padding: 0 10px;
+            color: var(--neon-cyan);
+            font-size: 0.8rem;
+        }
+
+        /* TIMELINE METODE */
+        .grid-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 4px solid var(--neon-cyan);
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            background: rgba(0, 240, 255, 0.05);
+            box-shadow: -5px 0 10px var(--neon-cyan);
+        }
+
+        .step-num {
+            color: var(--neon-magenta);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* MATERI UTAMA */
+        .materi-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: var(--neon-magenta);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 1px dashed var(--neon-magenta);
+            padding-bottom: 5px;
+            text-shadow: 0 0 5px var(--neon-magenta);
+        }
+
+        .detail-box {
+            background: var(--card-bg);
+            border: var(--border-glow);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .detail-box h3 {
+            color: var(--neon-cyan);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .detail-box ul {
+            list-style: none;
+        }
+
+        .detail-box li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .detail-box li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: var(--neon-yellow);
+        }
+
+        /* FOOTER BRANDING */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+        }
+
+        .btn-cyber {
+            display: inline-block;
+            background: transparent;
+            color: var(--neon-yellow);
+            border: 2px solid var(--neon-yellow);
+            padding: 12px 30px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 238, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-cyber:hover {
+            background: var(--neon-yellow);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-yellow);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="glitch-title">MEDIA CORE AX-2026</div>
+            <div class="subtitle">Otomatisasi Media Ajar 20 Menit Pasca-Tradisional</div>
+        </header>
+
+        <!-- ALUR KERJA CEPAT -->
+        <section class="system-status">
+            <div class="grid-flow">
+                <div class="step-card">
+                    <div class="step-num">01 // SCAN</div>
+                    <strong>Google Scholar / Rumah Belajar</strong><br>Ekstraksi basis data & materi valid tanpa hoax.
+                </div>
+                <div class="step-card">
+                    <div class="step-num">02 // PROCESS</div>
+                    <strong>NotebookLM</strong><br>Sintesis AI untuk modul, bank soal, dan modul audio otomatis.
+                </div>
+                <div class="step-card">
+                    <div class="step-num">03 // DESIGN</div>
+                    <strong>Playground AI & Canva</strong><br>Otomatisasi aset visual massal dengan fitur Bulk Create.
+                </div>
+                <div class="step-card">
+                    <div class="step-num">04 // INJECT</div>
+                    <strong>Google Classroom</strong><br>Terminal akhir untuk otomatisasi rilis jadwal materi 1 bulan.
+                </div>
+            </div>
+        </section>
+
+        <!-- OPERASIONAL TEKNIS -->
+        <section class="materi-section">
+            <div class="section-title">[ PROTOKOL EKSEKUSI MATERI ]</div>
+            
+            <div class="detail-box">
+                <h3>// NOTEBOOKLM: OTOT INTELIJEN</h3>
+                <ul>
+                    <li><strong>Akurasi Mutlak:</strong> AI hanya membaca dokumen input (PDF/Link) untuk menghindari disinformasi.</li>
+                    <li><strong>Ekstraksi Kilat:</strong> Cukup satu klik untuk menyusun soal evaluasi berbasis dokumen.</li>
+                    <li><strong>Audio Overview:</strong> Mengubah teks pasif menjadi format obrolan audio (Podcast) edukasi yang adaptif untuk siswa.</li>
+                </ul>
+            </div>
+
+            <div class="detail-box">
+                <h3>// MASS PRODUCTION: CANVA BULK CREATE</h3>
+                <ul>
+                    <li><strong>Aset Unik:</strong> Sintesis gambar/ilustrasi menggunakan Playground AI atau Wayground.</li>
+                    <li><strong>Otomatisasi Desain:</strong> Integrasi file CSV data soal langsung ke dalam layout template.</li>
+                    <li><strong>Anti Copy-Paste:</strong> Menghasilkan puluhan media visual atau kartu soal dalam hitungan detik.</li>
+                </ul>
+            </div>
+
+            <div class="detail-box">
+                <h3>// TERMINAL AKHIR: GOOGLE CLASSROOM</h3>
+                <ul>
+                    <li><strong>Sinkronisasi Aset:</strong> Tempat muara penggabungan dokumen visual Canva dan audio NotebookLM.</li>
+                    <li><strong>Sistem Penjadwalan:</strong> Mengaktifkan fitur "Schedule" untuk mendistribusikan materi berkala.</li>
+                    <li><strong>Efisiensi Waktu:</strong> Mengelola siklus pembelajaran satu bulan hanya dalam 10 menit persiapan.</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 25px; color: #888;">GURU KKA INFORMATIKA & PKWU // ALL SYSTEMS OPERATIONAL</p>
+            <a href="#" class="btn-cyber">DOWNLOAD CHEAT SHEET PROMPT</a>
+        </footer>
+    </div>
+
+</body>
+</html>
